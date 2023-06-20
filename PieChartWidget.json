@@ -1,0 +1,43 @@
+{
+    "name": "PieChartWidget",
+    "description": "Pie Chart Widget",
+    "newInstancePrefix": "PieChartWidget",
+    "vendor": "YourCompany",
+    "version": "1.0.0",
+    "icon": "",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "pie-chart-widget",
+            "url": "https://yourcompany.github.io/YourWidgetRepo/PieChartWidget.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+        "width": {
+            "type": "integer",
+            "default": 300
+        },
+        "height": {
+            "type": "integer",
+            "default": 300
+        }
+    },
+    "dataBindings": {
+        "myDataBinding": {
+            "feeds": [
+                {
+                    "id": "dimensions",
+                    "description": "Dimensions",
+                    "type": "dimension"
+                },
+                {
+                    "id": "measures",
+                    "description": "Measures",
+                    "type": "mainStructureMember"
+                }
+            ]
+        }
+    }
+}
