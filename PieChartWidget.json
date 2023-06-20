@@ -2,14 +2,17 @@
     "name": "PieChartWidget",
     "description": "Pie Chart Widget",
     "newInstancePrefix": "PieChartWidget",
-    "vendor": "YourCompany",
-    "version": "1.0.0",
+    "eula": "",
+    "license": "",
+    "id": "PieChartWidget",
+    "version": "1.0.1",
     "icon": "",
+    "vendor": "Planifyit",
     "webcomponents": [
         {
             "kind": "main",
             "tag": "pie-chart-widget",
-            "url": "https://planifyit.github.io/planifyit_piechart/PieChartWidget.js",
+            "url": "https://planifyit.github.io/Pie_chart/PieChartWidget.js",
             "integrity": "",
             "ignoreIntegrity": true
         }
