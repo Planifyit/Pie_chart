@@ -28,28 +28,26 @@
             this._props = { ...this._props, ...changedProperties };
         }
 
-        onCustomWidgetAfterUpdate(changedProperties) {
-            if ("myDataBinding" in changedProperties) {
-                this._updateData(this._props.myDataBinding);
-            }
-        }
-
-        _updateData(data) {
-            if (this._ready) {
-                // Transform the data into the correct format
-if (Array.isArray(data)) {
-    const transformedData = data.map(row => ({
-        dimension: row.dimensions_0.label,
-        measure: row.measures_0.raw
-    }));
-
-    this._renderChart(transformedData);
+ onCustomWidgetAfterUpdate(changedProperties) {
+    if ("myDataBinding" in changedProperties) {
+        this._updateData(this.myDataBinding);
+    }
 }
 
+_updateData(dataBinding) {
+    if (this._ready) {
+        // Check if dataBinding is defined and has data
+        if (dataBinding && Array.isArray(dataBinding.data)) {
+            // Transform the data into the correct format
+            const transformedData = dataBinding.data.map(row => ({
+                dimension: row.dimensions_0.label,
+                measure: row.measures_0.raw
+            }));
 
-
-            
+            this._renderChart(transformedData);
         }
+    }
+}
 
         _renderChart(data) {
             const width = 300;
