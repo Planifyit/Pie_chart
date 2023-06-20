@@ -37,13 +37,18 @@
         _updateData(data) {
             if (this._ready) {
                 // Transform the data into the correct format
-                const transformedData = data.map(row => ({
-                    dimension: row.dimensions_0.label,
-                    measure: row.measures_0.raw
-                }));
+if (Array.isArray(data)) {
+    const transformedData = data.map(row => ({
+        dimension: row.dimensions_0.label,
+        measure: row.measures_0.raw
+    }));
 
-                this._renderChart(transformedData);
-            }
+    this._renderChart(transformedData);
+}
+
+
+
+            
         }
 
         _renderChart(data) {
