@@ -36,18 +36,24 @@
 
 _updateData(dataBinding) {
     if (this._ready) {
-        // Check if dataBinding is defined and has data
-        if (dataBinding && Array.isArray(dataBinding.data)) {
+        // Get the data from the data binding
+        const data = dataBinding.data;
+
+        // Check if data is an array
+        if (Array.isArray(data)) {
             // Transform the data into the correct format
-            const transformedData = dataBinding.data.map(row => ({
+            const transformedData = data.map(row => ({
                 dimension: row.dimensions_0.label,
                 measure: row.measures_0.raw
             }));
 
             this._renderChart(transformedData);
+        } else {
+            console.error('Data is not an array:', data);
         }
     }
 }
+
 
         _renderChart(data) {
             const width = 300;
