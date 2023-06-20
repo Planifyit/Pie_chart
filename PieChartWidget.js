@@ -1,12 +1,23 @@
 (function() {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-        <style>
-            /* Add your CSS here */
-            .arc {
-                stroke: #fff;
-            }
-        </style>
+    <style>
+    .arc {
+        stroke: #fff;
+        transition: transform 0.3s ease-out;
+    }
+
+    .arc:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .arc text {
+        fill: #fff;
+        font: 10px sans-serif;
+        text-anchor: middle;
+    }
+</style>
         <div id="chart"></div>
     `;
 
