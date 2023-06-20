@@ -27,6 +27,8 @@
             "default": 300
         }
     },
+    "methods": {},
+    "events": {},
     "dataBindings": {
         "myDataBinding": {
             "feeds": [
