@@ -9,7 +9,7 @@
         {
             "kind": "main",
             "tag": "pie-chart-widget",
-            "url": "https://yourcompany.github.io/YourWidgetRepo/PieChartWidget.js",
+            "url": "https://planifyit.github.io/planifyit_piechart/PieChartWidget.js",
             "integrity": "",
             "ignoreIntegrity": true
         }
