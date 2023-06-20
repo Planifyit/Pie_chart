@@ -16,6 +16,12 @@
             this._shadowRoot = this.attachShadow({mode: 'open'});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._props = {};
+
+            // Load D3.js
+            const script = document.createElement('script');
+            script.src = 'https://d3js.org/d3.v5.min.js';
+            script.onload = () => this._ready = true;
+            this._shadowRoot.appendChild(script);
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) {
@@ -29,11 +35,15 @@
         }
 
         _updateData(data) {
-            // Load D3.js
-            const script = document.createElement('script');
-            script.src = 'https://d3js.org/d3.v5.min.js';
-            script.onload = () => this._renderChart(data);
-            this._shadowRoot.appendChild(script);
+            if (this._ready) {
+                // Transform the data into the correct format
+                const transformedData = data.map(row => ({
+                    dimension: row.dimensions_0.label,
+                    measure: row.measures_0.raw
+                }));
+
+                this._renderChart(transformedData);
+            }
         }
 
         _renderChart(data) {
