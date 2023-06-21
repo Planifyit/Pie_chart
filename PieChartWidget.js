@@ -94,7 +94,7 @@ console.log('dataBinding:', dataBinding);
             const pie = d3.pie()
                 .sort(null)
                 .value(d => d.measure);
-
+console.log(this._shadowRoot.getElementById('chart'));
 const svg = d3.select(this._shadowRoot.getElementById('chart')).append("svg")
     .attr("width", width)
     .attr("height", height)
