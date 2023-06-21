@@ -46,6 +46,15 @@
 }
 
 _updateData(dataBinding) {
+
+console.log('dataBinding:', dataBinding);
+    if (!dataBinding) {
+    console.error('dataBinding is undefined');
+}
+    if (!dataBinding || !dataBinding.data) {
+    console.error('dataBinding.data is undefined');
+}
+    
     if (this._ready) {
         // Check if dataBinding and dataBinding.data are defined
         if (dataBinding && Array.isArray(dataBinding.data)) {
