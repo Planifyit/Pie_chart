@@ -72,7 +72,6 @@ console.log('dataBinding:', dataBinding);
     };
 });
 
-            
             this._renderChart(transformedData);
         } else {
             console.error('Data is not an array:', dataBinding && dataBinding.data);
@@ -85,11 +84,9 @@ console.log('dataBinding:', dataBinding);
         _renderChart(data) {
             console.log('data',data);
             console.log('JS',d3);
-    const margin = 10;  // Adjust as needed
-    const padding = 10;  // Adjust as needed
-    const width = this._props.width - 2 * margin - 2 * padding;
-    const height = this._props.height - 2 * margin - 2 * padding;
-    const radius = Math.min(width, height) / 2;
+const width = this._props.width || 500; // Default to 500 if width is not set in _props
+const height = this._props.height || 500; // Default to 500 if height is not set in _props
+const radius = Math.min(width, height) / 2;
 
 
             const color = d3.scaleOrdinal()
@@ -106,10 +103,8 @@ console.log(this._shadowRoot.getElementById('chart'));
 const svg = d3.select(this._shadowRoot.getElementById('chart')).append("svg")
     .attr("width", width)
     .attr("height", height)
-    .attr("viewBox", `0 0 ${width} ${height}`)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
 console.log(svg);  
 
 
