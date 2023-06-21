@@ -47,23 +47,21 @@
 
 _updateData(dataBinding) {
     if (this._ready) {
-        // Get the data from the data binding
-        const data = dataBinding.data;
-
-        // Check if data is an array
-        if (Array.isArray(data)) {
+        // Check if dataBinding and dataBinding.data are defined
+        if (dataBinding && Array.isArray(dataBinding.data)) {
             // Transform the data into the correct format
-            const transformedData = data.map(row => ({
+            const transformedData = dataBinding.data.map(row => ({
                 dimension: row.dimensions_0.label,
                 measure: row.measures_0.raw
             }));
 
             this._renderChart(transformedData);
         } else {
-            console.error('Data is not an array:', data);
+            console.error('Data is not an array:', dataBinding && dataBinding.data);
         }
     }
 }
+
 
 
         _renderChart(data) {
