@@ -20,11 +20,11 @@
     "properties": {
         "width": {
             "type": "integer",
-            "default": 500
+            "default": 750
         },
         "height": {
             "type": "integer",
-            "default": 500
+            "default": 700
         }
     },
     "methods": {},
