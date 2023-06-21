@@ -6,12 +6,10 @@
         stroke: #fff;
         transition: transform 0.3s ease-out;
     }
-
     .arc:hover {
         transform: scale(1.1);
         cursor: pointer;
     }
-
     .arc text {
         fill: #fff;
         font: 10px sans-serif;
@@ -104,9 +102,6 @@ console.log('dataBinding:', dataBinding);
                 .sort(null)
                 .value(d => d.measure);
 console.log(this._shadowRoot.getElementById('chart'));
-
- d3.select(this._shadowRoot.getElementById('chart')).html("");
-         
 const svg = d3.select(this._shadowRoot.getElementById('chart')).append("svg")
     .attr("width", width)
     .attr("height", height)
