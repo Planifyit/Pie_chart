@@ -51,6 +51,7 @@ _updateData(dataBinding) {
         if (dataBinding && Array.isArray(dataBinding.data)) {
             // Transform the data into the correct format
             const transformedData = dataBinding.data.map(row => ({
+                  console.log('row:', row);
                 dimension: row.dimensions_0.label,
                 measure: row.measures_0.raw
             }));
