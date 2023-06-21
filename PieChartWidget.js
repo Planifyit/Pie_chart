@@ -107,8 +107,10 @@ console.log(this._shadowRoot.getElementById('chart'));
 const svg = d3.select(this._shadowRoot.getElementById('chart')).append("svg")
     .attr("width", width)
     .attr("height", height)
+    .attr("viewBox", `0 0 ${width} ${height}`)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
 console.log(svg);  
 
 
