@@ -72,6 +72,7 @@ console.log('dataBinding:', dataBinding);
     };
 });
 
+            
             this._renderChart(transformedData);
         } else {
             console.error('Data is not an array:', dataBinding && dataBinding.data);
