@@ -88,6 +88,7 @@ const width = this._props.width || 500; // Default to 500 if width is not set in
 const height = this._props.height || 500; // Default to 500 if height is not set in _props
 const radius = Math.min(width, height) / 2;
 
+d3.select(this._shadowRoot.getElementById('chart')).selectAll("*").remove();
 
             const color = d3.scaleOrdinal()
                 .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
