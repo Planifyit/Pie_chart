@@ -59,11 +59,13 @@ console.log('dataBinding:', dataBinding);
         // Check if dataBinding and dataBinding.data are defined
         if (dataBinding && Array.isArray(dataBinding.data)) {
             // Transform the data into the correct format
-            const transformedData = dataBinding.data.map(row => ({
-                  console.log('row:', row);
-                dimension: row.dimensions_0.label,
-                measure: row.measures_0.raw
-            }));
+        const transformedData = dataBinding.data.map(row => {
+    console.log('row:', row);
+    return {
+        dimension: row.dimensions_0.label,
+        measure: row.measures_0.raw
+    };
+});
 
             this._renderChart(transformedData);
         } else {
