@@ -28,7 +28,7 @@
             margin: 10px;
         }
 </style>
-          <div class="image-container"></div>   
+          <div class="image-container"> <svg width="750" height="100">  </svg></div>   
         <div id="chart"></div>
              
                
