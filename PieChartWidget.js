@@ -39,11 +39,12 @@
             this._props = { ...this._props, ...changedProperties };
         }
 
- onCustomWidgetAfterUpdate(changedProperties) {
+onCustomWidgetAfterUpdate(changedProperties) {
     if ("myDataBinding" in changedProperties) {
-        this._updateData(this.myDataBinding);
+        this._updateData(changedProperties.myDataBinding);
     }
 }
+
 
 _updateData(dataBinding) {
 
