@@ -105,8 +105,8 @@ console.log('dataBinding:', dataBinding);
                 .value(d => d.measure);
 console.log(this._shadowRoot.getElementById('chart'));
 
-            d3.select(this._shadowRoot.getElementById('chart')).selectAll("svg").remove();
-
+ d3.select(this._shadowRoot.getElementById('chart')).html("");
+         
 const svg = d3.select(this._shadowRoot.getElementById('chart')).append("svg")
     .attr("width", width)
     .attr("height", height)
