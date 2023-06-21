@@ -17,6 +17,12 @@
         font: 10px sans-serif;
         text-anchor: middle;
     }
+     
+     #chart {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 10px;
+        }
 </style>
         <div id="chart"></div>
     `;
@@ -80,9 +86,10 @@ console.log('dataBinding:', dataBinding);
         _renderChart(data) {
             console.log('data',data);
             console.log('JS',d3);
-            const width = 300;
-            const height = 300;
-            const radius = Math.min(width, height) / 2;
+const width = this._props.width || 500; // Default to 500 if width is not set in _props
+const height = this._props.height || 500; // Default to 500 if height is not set in _props
+const radius = Math.min(width, height) / 2;
+
 
             const color = d3.scaleOrdinal()
                 .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
