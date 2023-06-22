@@ -65,26 +65,28 @@ onCustomWidgetAfterUpdate(changedProperties) {
 
 
 _updateData(dataBinding) {
-
-console.log('dataBinding:', dataBinding);
+    console.log('dataBinding:', dataBinding);
     if (!dataBinding) {
-    console.error('dataBinding is undefined');
-}
+        console.error('dataBinding is undefined');
+    }
     if (!dataBinding || !dataBinding.data) {
-    console.error('dataBinding.data is undefined');
-}
+        console.error('dataBinding.data is undefined');
+    }
     
     if (this._ready) {
         // Check if dataBinding and dataBinding.data are defined
         if (dataBinding && Array.isArray(dataBinding.data)) {
             // Transform the data into the correct format
-        const transformedData = dataBinding.data.map(row => {
-    console.log('row:', row);
-    return {
-        dimension: row.dimensions_0.label,
-        measure: row.measures_0.raw
-    };
-});
+            const transformedData = dataBinding.data.map(row => {
+                console.log('row:', row);
+                // Check if dimensions_0 and measures_0 are defined before trying to access their properties
+                if (row.dimensions_0 && row.measures_0) {
+                    return {
+                        dimension: row.dimensions_0.label,
+                        measure: row.measures_0.raw
+                    };
+                }
+            }).filter(Boolean);  // Filter out any undefined values
 
             this._renderChart(transformedData);
         } else {
@@ -92,6 +94,7 @@ console.log('dataBinding:', dataBinding);
         }
     }
 }
+
 
 
 
